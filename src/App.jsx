@@ -1,7 +1,7 @@
 import './App.css';
 import { Data } from './api-ref.js';
 import React from 'react';
-import { Button, Card, CardContent, Menu, MenuItem, Paper, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Button, Card, CardContent, Menu, MenuItem, Paper, TableCell, TableContainer, TableRow } from '@mui/material';
 
 const dates = [['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'],
   ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница']];
@@ -17,14 +17,14 @@ function App() {
     setAnchorElGrade(event.currentTarget);
   };
   const handleCloseGrade = (ctx) => {
-    if(ctx.target.id!='') setCurrentData(Data.filter((item) => item.grade == ctx.target.id));
+    if(ctx.target.id!=='') setCurrentData(Data.filter((item) => item.grade === ctx.target.id));
     setAnchorElGrade(null);
   };
   const handleClickDay = (event) => {
     setAnchorElDay(event.currentTarget);
   };
   const handleCloseDay = (ctx) => {
-    if(ctx.target.id!='') setCurrentDay(ctx.target.id);
+    if(ctx.target.id!=='') setCurrentDay(ctx.target.id);
     setAnchorElDay(null);
   };
   
@@ -82,13 +82,13 @@ function App() {
           <TableContainer component={Paper}>
             {
               currentData[0].subjects
-                .filter(item => item.subjectDay == currentDay)
+                .filter(item => item.subjectDay === currentDay)
                 .map(item => 
                   <TableRow>
                     <TableCell>
                       {
                         currentData[0].subjects
-                        .filter(item => item.subjectDay == currentDay)
+                        .filter(item => item.subjectDay === currentDay)
                         .indexOf(item) + 1
                       }
                     </TableCell>
