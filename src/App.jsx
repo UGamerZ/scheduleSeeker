@@ -93,6 +93,7 @@ function App() {
                       }
                     </TableCell>
                     <TableCell align='right'>{item.lesson}</TableCell>
+                    <TableCell align='right'>{item.room}</TableCell>
                   </TableRow>
                 )
             }
