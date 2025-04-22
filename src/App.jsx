@@ -10,7 +10,8 @@ function App() {
   const [anchorElGrade, setAnchorElGrade] = React.useState(null);
   const [anchorElDay, setAnchorElDay] = React.useState(null);
   const [currentData, setCurrentData] = React.useState(Data);
-  const [currentDay, setCurrentDay] = React.useState('MONDAY');
+  const [currentDay, setCurrentDay] = React.useState(
+      dates[0][new Date(Date.now()).getDay() - 1]? dates[0][new Date(Date.now()).getDay() - 1] : 'MONDAY');
   const openGrade = Boolean(anchorElGrade);
   const openDay = Boolean(anchorElDay);
   const handleClickGrade = (event) => {
