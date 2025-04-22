@@ -71,6 +71,15 @@ function App() {
         >
           Сегодня
         </MenuItem>
+        <MenuItem
+          id={
+            dates[0][new Date(Date.now()).getDay()]?
+                dates[0][new Date(Date.now()).getDay()] : dates[0][0]
+          }
+          onClick={(ctx) => handleCloseDay(ctx)}
+        >
+          Завтра
+        </MenuItem>
         <MenuItem id={dates[0][0]} onClick={(ctx) => handleCloseDay(ctx)}>Понедельник</MenuItem>
         <MenuItem id={dates[0][1]} onClick={(ctx) => handleCloseDay(ctx)}>Вторник</MenuItem>
         <MenuItem id={dates[0][2]} onClick={(ctx) => handleCloseDay(ctx)}>Среда</MenuItem>
